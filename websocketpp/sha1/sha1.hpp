@@ -50,7 +50,7 @@ inline unsigned int rol(unsigned int value, unsigned int steps) {
 // Used for clearing the W buffert.
 inline void clearWBuffert(unsigned int * buffert)
 {
-    for (int pos = 16; --pos >= 0;)
+    for (int pos = 15; pos >= 0; pos--)
     {
         buffert[pos] = 0;
     }
@@ -146,7 +146,7 @@ inline void calc(void const * src, size_t bytelength, unsigned char * hash) {
         while (currentBlock <= endOfFullBlocks) {
             endCurrentBlock = currentBlock + 64;
 
-            // Init the round buffer with the 64 byte block data.
+            // Initialize the round buffer with the 64 byte block data.
             for (int roundPos = 0; currentBlock < endCurrentBlock; currentBlock += 4)
             {
                 // This line will swap endian on big endian and keep endian on
@@ -178,7 +178,7 @@ inline void calc(void const * src, size_t bytelength, unsigned char * hash) {
 
     // Store hash in result pointer, and make sure we get in in the correct
     // order on both endian models.
-    for (int hashByte = 20; --hashByte >= 0;) {
+    for (int hashByte = 19; hashByte >= 0; hashByte--) {
         hash[hashByte] = (result[hashByte >> 2] >> (((3 - hashByte) & 0x3) << 3)) & 0xff;
     }
 }
