@@ -1,10 +1,10 @@
 WebSocket++ (0.8.2)
 ==========================
 
-WebSocket++ is a header only C++ library that implements RFC6455 The WebSocket
+WebSocket++ is a header only C++ library that implements RFC6455 WebSocket
 Protocol. It allows integrating WebSocket client and server functionality into
 C++ programs. It uses interchangeable network transport modules including one
-based on raw char buffers, one based on C++ iostreams, and one based on Asio 
+based on raw char buffers, one based on C++ iostreams library, and one based on Asio 
 (either via Boost or standalone). End users can write additional transport
 policies to support other networking or event libraries as needed.
 
